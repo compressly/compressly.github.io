@@ -1,0 +1,575 @@
+:root {
+  --bg: #0b1020;
+  --card: #0f1724;
+  --muted: #9aa4b2;
+  --accent-1: #4f46e5;
+  --accent-2: #7c3aed;
+  --accent-3: #10b981;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, Segoe UI, Roboto, Arial;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, #030417 0%, #07102a 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  color: #e6eef8;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+}
+.site-top {
+  backdrop-filter: blur(6px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.site-top .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 20px;
+}
+.nav {
+  display: flex;
+  gap: 14px;
+}
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* Hero */
+.hero {
+  padding: 48px 0;
+}
+.hero-inner {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.hero-copy {
+  flex: 1;
+  max-width: 560px;
+}
+.title {
+  font-size: 48px;
+  margin: 0 0 10px 0;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tag {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.cta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.12);
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+}
+.btn.large {
+  padding: 14px 22px;
+  border-radius: 12px;
+}
+.bullets {
+  margin-top: 18px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+/* Mock app visual */
+.hero-visual {
+  width: 420px;
+}
+.mock-window {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.6);
+  transform: translateY(12px);
+  opacity: 0;
+}
+.mock-top {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+}
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.mock-title {
+  color: var(--muted);
+  font-size: 13px;
+  margin-left: auto;
+}
+.mock-body {
+  padding: 14px;
+}
+.files {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.005)
+  );
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.file:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.45);
+  background: rgba(255, 255, 255, 0.02);
+}
+.thumb {
+  width: 64px;
+  height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.2);
+}
+.thumb-video {
+  background: linear-gradient(135deg, #10b981, #06b6a4);
+}
+.thumb-img {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+.meta {
+  flex: 1;
+}
+.name {
+  font-weight: 700;
+}
+.progress {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  width: 0%;
+  transition: width 900ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+
+/* make feature cards lift on hover */
+.card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.55);
+  outline: none;
+  /* additional glow */
+  box-shadow: 0 40px 100px rgba(79, 70, 229, 0.14),
+    0 30px 80px rgba(2, 6, 23, 0.55);
+}
+
+/* refine mock window to look closer to app */
+.mock-top {
+  padding: 8px 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  display: flex;
+  align-items: center;
+}
+.mock-top .dots span {
+  width: 9px;
+  height: 9px;
+}
+.mock-title {
+  margin-left: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.mock-body {
+  padding: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0)
+  );
+}
+.files {
+  gap: 12px;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* initial hidden state for additional elements we want to fade in */
+.title,
+.tag,
+.cta-row,
+.bullets,
+.hero-visual,
+.mock-body,
+.section-title,
+.how .step,
+.download .lead,
+.download .cta-row,
+.site-foot {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* play-animate targets for additional elements */
+.play-animate .title {
+  animation: fadeUp 700ms ease forwards var(--delay, 0ms);
+}
+.play-animate .tag {
+  animation: fadeUp 680ms ease forwards var(--delay, 40ms);
+}
+.play-animate .cta-row {
+  animation: fadeUp 700ms ease forwards var(--delay, 80ms);
+}
+.play-animate .bullets {
+  animation: fadeUp 700ms ease forwards var(--delay, 120ms);
+}
+.play-animate .hero-visual,
+.play-animate .mock-body {
+  animation: fadeUp 700ms ease forwards var(--mock-delay, 160ms);
+}
+.play-animate .section-title {
+  animation: fadeUp 640ms ease forwards var(--delay, 0ms);
+}
+.play-animate .how .step {
+  animation: fadeUp 640ms ease forwards var(--delay, 0ms);
+}
+.play-animate .download .lead,
+.play-animate .download .cta-row,
+.play-animate .site-foot {
+  animation: fadeUp 640ms ease forwards var(--delay, 0ms);
+}
+
+/* Features */
+.features {
+  padding: 36px 0;
+}
+.section-title {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 26px rgba(2, 6, 23, 0.35);
+  transform: translateY(18px);
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* animations are applied when the body has .play-animate so JS can set delays first */
+.play-animate .mock-window {
+  animation: fadeUp 700ms ease forwards var(--mock-delay, 120ms);
+}
+.play-animate .card {
+  animation: fadeUp 600ms ease forwards var(--delay, 0ms);
+}
+/* hovering state for keyboard focus and JS-added class */
+.card.hovering,
+.btn.hovering {
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.55),
+    0 0 18px rgba(124, 58, 237, 0.12) inset;
+}
+
+/* ripple element */
+.ripple {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.12);
+  animation: ripple 600ms cubic-bezier(0.22, 0.9, 0.32, 1);
+}
+@keyframes ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.card-emoji {
+  font-size: 28px;
+}
+.card h3 {
+  margin: 8px 0;
+}
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* How */
+.how {
+  padding: 36px 0;
+}
+.steps {
+  display: flex;
+  gap: 12px;
+}
+.step {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  flex: 1;
+}
+.num {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--accent-1);
+}
+.desc {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Download */
+.download {
+  padding: 36px 0;
+}
+.lead {
+  color: var(--muted);
+}
+
+/* Footer */
+.site-foot {
+  padding: 20px 0;
+  color: var(--muted);
+}
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  .hero-visual {
+    width: 100%;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+}
+
+/* Background decorative blobs */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Background decorative blobs - tuned for visibility and performance */
+.bg-blobs .blob {
+  position: absolute;
+  border-radius: 50%;
+  /* larger blur for soft edges */
+  filter: blur(56px);
+  /* very low base opacity so shapes are subtle */
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  /* hint to the browser that transform/opacity will animate */
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+.bg-blobs .b1 {
+  width: 540px;
+  height: 540px;
+  left: -140px;
+  top: -100px;
+  background: radial-gradient(circle at 30% 30%, #7c3aed, #4f46e5);
+  /* slightly faster and larger drift so motion is noticeable */
+  animation: blobDrift 22s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.bg-blobs .b2 {
+  width: 420px;
+  height: 420px;
+  right: -100px;
+  top: 38%;
+  background: radial-gradient(circle at 50% 40%, #06b6a4, #10b981);
+  animation: blobDrift 28s ease-in-out infinite;
+  animation-delay: 6s;
+}
+.bg-blobs .b3 {
+  width: 320px;
+  height: 320px;
+  left: 8%;
+  bottom: -100px;
+  background: radial-gradient(circle at 60% 60%, #f97316, #f59e0b);
+  animation: blobDrift 24s ease-in-out infinite;
+  animation-delay: 10s;
+}
+@keyframes blobDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    opacity: 0.08;
+  }
+  20% {
+    transform: translate3d(36px, -22px, 0) scale(1.03) rotate(2deg);
+    opacity: 0.1;
+  }
+  40% {
+    transform: translate3d(-28px, 26px, 0) scale(0.97) rotate(-1deg);
+    opacity: 0.07;
+  }
+  60% {
+    transform: translate3d(22px, 14px, 0) scale(1.01) rotate(1deg);
+    opacity: 0.095;
+  }
+  80% {
+    transform: translate3d(-16px, -10px, 0) scale(0.995) rotate(-0.5deg);
+    opacity: 0.075;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    opacity: 0.08;
+  }
+}
+/* new blob styles appear below (blobDrift) */
+
+/* CTA shimmer */
+.btn.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.06)
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.btn.primary:hover::after {
+  animation: shimmer 900ms linear forwards;
+}
+@keyframes shimmer {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+/* mock-window glow */
+.mock-window {
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+.mock-window:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 60px 160px rgba(79, 70, 229, 0.12),
+    0 30px 80px rgba(2, 6, 23, 0.6);
+}
+
+/* floating slight animation for cards when idle */
+.card {
+  animation: subtleFloat 10s ease-in-out infinite;
+}
+@keyframes subtleFloat {
+  0% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}

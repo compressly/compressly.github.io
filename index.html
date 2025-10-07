@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Compressly — Fast local image & video compression</title>
+    <meta
+      name="description"
+      content="Compressly — a small, local app for compressing images and videos. Fast, stylish, and privacy-first."
+    />
+    <link rel="icon" href="../src/compressly.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- decorative animated background blobs -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+    </div>
+    <header class="site-top">
+      <div class="container">
+        <div class="brand">Compressly</div>
+        <nav class="nav">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#how">How it works</a>
+          <a class="nav-link" href="#download">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 class="title">Compressly</h1>
+            <p class="tag">
+              Compress images & videos locally — small file sizes, big quality.
+              No uploads. No tracking. All local.
+            </p>
+            <div class="cta-row">
+              <a
+                class="btn primary"
+                id="downloadBtn"
+                href="https://github.com/compressly/compressly.github.io/releases/download/v1.0.0/Compressly.Setup.1.0.0.exe"
+                target="_blank"
+                rel="noopener"
+                >Download for Windows</a
+              >
+              <a class="btn ghost" id="learnBtn" href="#features"
+                >See features</a
+              >
+            </div>
+            <ul class="bullets">
+              <li>Lossy/Lossless image compression (preserve format)</li>
+              <li>Adaptive video bitrate & resolution targeting</li>
+              <li>Drag & drop, progress UI, deterministic thumbnails</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <div class="mock-window">
+              <div class="mock-top">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="mock-title">Compressly</div>
+              </div>
+              <div class="mock-body">
+                <div class="files">
+                  <div class="file">
+                    <div class="thumb thumb-video"></div>
+                    <div class="meta">
+                      <div class="name">epik clip.mov</div>
+                      <div class="progress"><i style="width: 45%"></i></div>
+                    </div>
+                  </div>
+                  <div class="file">
+                    <div class="thumb thumb-img"></div>
+                    <div class="meta">
+                      <div class="name">render.png</div>
+                      <div class="progress"><i style="width: 78%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features container">
+        <h2 class="section-title">Features</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-emoji">🖼️</div>
+            <h3>Image-first</h3>
+            <p>
+              Preserve original formats, iterative compression with smart
+              quality/resizing to hit target sizes.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-emoji">🎬</div>
+            <h3>Video-aware</h3>
+            <p>
+              Adaptive video bitrate calculation, target resolution options, and
+              FPS control to keep files under your limit.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-emoji">🔒</div>
+            <h3>Privacy-first</h3>
+            <p>
+              All processing happens locally on your machine with FFmpeg and
+              Sharp. Nothing is uploaded.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-emoji">⚡</div>
+            <h3>Snappy UI</h3>
+            <p>
+              Drag & drop, progress bars, cancel/remove, deterministic
+              thumbnails and subtle animations.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="how container">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div class="desc">Pick files or drag & drop into the app.</div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div class="desc">Choose a target size and resolution.</div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div class="desc">
+              Compress locally. Outputs are saved next to originals.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="download container">
+        <h2 class="section-title">Get Compressly</h2>
+        <p class="lead">
+          Download a native Windows build and keep your media small and
+          shareable — offline and private.
+        </p>
+        <div class="cta-row">
+          <a
+            class="btn primary large"
+            href="https://github.com/compressly/compressly.github.io/releases/download/v1.0.0/Compressly.Setup.1.0.0.exe"
+            target="_blank"
+            rel="noopener"
+            >Download (Windows)</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-foot">
+      <div class="container">
+        <div>© Compressly — Minimack Studios</div>
+        <div class="muted">Built with FFmpeg & Sharp • Local processing</div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
