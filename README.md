@@ -1,2 +1,2 @@
 # compressly.github.io
-The website for Compressly
+The landing page for [Compressly](https://github.com/MinimackStudios/compressly)
