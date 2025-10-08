@@ -57,22 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".how .step")
     .forEach((el, i) => el.style.setProperty("--delay", `${100 * i}ms`));
 
-  // about page sequential reveal using .to-reveal/.visible
-  const aboutContainer = document.querySelector(".about");
-  if (aboutContainer) {
-    const toReveal = Array.from(aboutContainer.querySelectorAll(".to-reveal"));
-    // Ensure none are visible initially, then reveal in order
-    const base = 10; // heading start
-    const overlapOffset = 120; // ms after heading start when next items begin (creates overlap)
-    const step = 50; // tighter step between following items
-    toReveal.forEach((el, i) => {
+  // sequential reveal for any .to-reveal elements on the page
+  const allToReveal = Array.from(document.querySelectorAll(".to-reveal"));
+  if (allToReveal.length) {
+    const base = 120; // initial delay before first reveal
+    const overlapOffset = 120; // when following items start after the first
+    const step = 40; // spacing between following items
+    allToReveal.forEach((el, i) => {
       let delay;
-      if (i === 0) {
-        delay = base;
-      } else {
-        // start subsequent items shortly after heading starts so they overlap
-        delay = base + overlapOffset + (i - 1) * step;
-      }
+      if (i === 0) delay = base;
+      else delay = base + overlapOffset + (i - 1) * step;
+      // ensure hidden -> visible transition
+      el.classList.remove("visible");
       setTimeout(() => el.classList.add("visible"), delay);
     });
   }

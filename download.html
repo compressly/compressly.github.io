@@ -3,16 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>About — Compressly</title>
-    <meta
-      name="description"
-      content="About Compressly — a small, local app for compressing images and videos."
-    />
+    <title>Download — Compressly</title>
+    <meta name="description" content="The download page for Compressly" />
     <link rel="icon" href="./compressly.ico" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- decorative animated background blobs -->
     <div class="bg-blobs" aria-hidden="true">
       <span class="blob b1"></span>
       <span class="blob b2"></span>
@@ -33,7 +29,7 @@
           <a class="nav-link" href="/">Home</a>
           <a class="nav-link" href="/#features">Features</a>
           <a class="nav-link" href="/#how">How it works</a>
-          <a class="nav-link" href="/#download">Download</a>
+          <a class="nav-link" href="about.html">About</a>
         </nav>
       </div>
     </header>
@@ -41,48 +37,60 @@
     <main>
       <section class="container about">
         <h1 class="section-title about-title to-reveal">
-          About <span class="brand-inline">Compressly</span>
+          Thank you for downloading
+          <span class="brand-inline">Compressly!</span>
         </h1>
-        <p class="lead about-lead to-reveal"></p>
+        <p class="lead about-lead to-reveal">
+          We're preparing your download. Before you run the installer, please
+          read the short note about Windows Defender and potential false
+          positives.
+        </p>
 
-        <h2 class="about-sub to-reveal">Goals</h2>
+        <h2 class="about-sub to-reveal">Download</h2>
+        <p class="to-reveal">
+          Click the button below to download the installer for Windows.
+        </p>
+        <p class="to-reveal">
+          <a
+            class="btn primary large"
+            href="https://github.com/MinimackStudios/compressly/releases/download/v1.0.3/Compressly.Setup.1.0.3.exe"
+            target=""
+            rel="noopener"
+          >
+            <img
+              class="os-icon windows-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2012_%28dark_blue%29.svg"
+              alt="Windows"
+              aria-hidden="true"
+            />
+            Download v1.0.3</a
+          >
+        </p>
+
+        <h2 class="about-sub to-reveal">Windows Defender / SmartScreen</h2>
+        <p class="to-reveal">
+          Some users may see a SmartScreen or Windows Defender warning for new
+          releases of small apps distributed outside major stores. This is a
+          false positive in many cases and can happen for low-distribution apps
+          or unsigned binaries.
+        </p>
         <ul class="to-reveal">
-          <li>Make high-quality compression accessible without uploads.</li>
           <li>
-            Provide sensible defaults for images & videos but allow power users
-            to tweak settings.
+            If you see a "Windows protected your PC" message, click "More info"
+            and then "Run anyway".
           </li>
-          <li>Keep the UI fast, predictable, and user-friendly.</li>
+          <li>
+            If Defender blocks the download, you can temporarily disable
+            real-time protection or add an exclusion for the downloaded
+            file/folder.
+          </li>
         </ul>
 
-        <h2 class="about-sub to-reveal">Built with</h2>
+        <h2 class="about-sub to-reveal">Questions or concerns</h2>
         <p class="to-reveal">
-          Compressly is built with <strong>Electron</strong> and uses
-          <strong>FFmpeg</strong> for video processing and
-          <strong>Sharp</strong>
-          for image processing. Its designed to be simple, fast, and useful—
-          especially for people who need lightweight media without sacrificing
-          quality.
-        </p>
-
-        <h2 class="about-sub to-reveal">Why?</h2>
-        <p class="to-reveal">
-          There are many tools for compressing videos, but few that also support
-          images, fewer still that work entirely offline, and even fewer that
-          don't have some sort of file size limit or require some sort of
-          payment for the "full experience".
-          <br /><br />
-          So I decided: <strong>Why not make my own?</strong> With little to no
-          coding experience, I used GitHub Copilot to help bring it to
-          life—prompting, refining, and troubleshooting until it matched my
-          vision. Compressly is the result of persistence, curiosity, and
-          creative direction.
-        </p>
-
-        <h2 class="about-sub to-reveal">Source & License</h2>
-        <p class="to-reveal">
-          The project is open-source. View source, releases, and report issues
-          on GitHub:
+          If you have any trouble or suspect something is wrong, open an issue
+          on the repository or download a previous release from the releases
+          page:
         </p>
         <p class="to-reveal">
           <a
@@ -109,12 +117,12 @@
                 d="M12 .297a12 12 0 00-3.793 23.394c.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.338.73-4.042-1.61-4.042-1.61-.546-1.39-1.333-1.76-1.333-1.76-1.09-.75.082-.74.082-.74 1.205.084 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.485.99.108-.77.42-1.3.763-1.6-2.665-.3-5.466-1.33-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 016 0c2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.625-5.475 5.92.432.372.816 1.102.816 2.222 0 1.606-.015 2.9-.015 3.293 0 .32.216.694.825.576A12.005 12.005 0 0012 .297"
               />
             </svg>
-            View source on Github
-          </a>
+            View source on GitHub</a
+          >
         </p>
 
         <p class="to-reveal">
-          <a class="btn primary" href="/">Back to home</a>
+          <a class="btn primary" href="index.html">Back to home</a>
         </p>
       </section>
     </main>
@@ -122,10 +130,7 @@
     <footer class="site-foot">
       <div class="container">
         <div>© Compressly — Minimack Studios</div>
-        <div class="muted">
-          Built with Electron • Compression done with FFMmpeg and Sharp • Local
-          processing
-        </div>
+        <div class="muted">Built with FFmpeg & Sharp • Local processing</div>
       </div>
     </footer>
 
