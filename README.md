@@ -1,3 +1,1 @@
-# compressly.github.io
-
-The website for Compressly
+The source code for the [Compressly](https://github.com/MinimackStudios/compressly) landing page.
