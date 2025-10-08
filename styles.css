@@ -131,9 +131,6 @@ body {
   height: 1.1em;
   object-fit: contain;
   display: inline-block;
-  /* force external SVG img to appear white: make dark parts bright and invert */
-  -webkit-filter: brightness(0) invert(1);
-  filter: brightness(0) invert(1);
 }
 .btn.primary {
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
