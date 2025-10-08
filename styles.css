@@ -119,6 +119,22 @@ body {
   overflow: hidden;
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
+
+.os-icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  fill: currentColor;
+  display: inline-block;
+}
+.windows-icon {
+  width: 1.1em;
+  height: 1.1em;
+  object-fit: contain;
+  display: inline-block;
+  /* force external SVG img to appear white: make dark parts bright and invert */
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
 .btn.primary {
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
   color: #fff;
