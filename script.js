@@ -1,5 +1,109 @@
 // Simple scroll-based fade-in for elements that use the fadeUp animation
 document.addEventListener("DOMContentLoaded", () => {
+  // detect low-power / low-memory devices and set a class so CSS/JS can reduce effects
+  const deviceMemory = navigator.deviceMemory || 4; // approximate GB
+  const cores = navigator.hardwareConcurrency || 4;
+  const autoLowPower = deviceMemory <= 2 || cores <= 2;
+
+  // allow user override via localStorage: '1' = low-power forced, '0' = disabled
+  const stored = (() => {
+    try {
+      return localStorage.getItem("compressly-low-power");
+    } catch (e) {
+      return null;
+    }
+  })();
+  let isLowPower = autoLowPower;
+  if (stored === "1") isLowPower = true;
+  if (stored === "0") isLowPower = false;
+  if (isLowPower) document.documentElement.classList.add("low-power");
+
+  // helper: apply UI changes needed when toggling low-power (lite) mode
+  function applyLowPowerMode(turnOn) {
+    const docEl = document.documentElement;
+    const body = document.body;
+    if (turnOn) {
+      docEl.classList.add("low-power");
+      // ensure any reveal animations are shown immediately to avoid flashes
+      document
+        .querySelectorAll(".to-reveal")
+        .forEach((el) => el.classList.add("visible"));
+      // stop play-animate so heavy CSS animations won't run
+      body.classList.remove("play-animate");
+      // stop blob animations if present (expensive to run)
+      document.querySelectorAll(".bg-blobs .blob").forEach((b) => {
+        try {
+          b.style.animation = "none";
+        } catch (e) {}
+      });
+    } else {
+      docEl.classList.remove("low-power");
+      // re-run reveal sequence similar to initial load
+      const allToReveal = Array.from(document.querySelectorAll(".to-reveal"));
+      if (allToReveal.length) {
+        const base = 120; // initial delay before first reveal
+        const overlapOffset = 120;
+        const step = 40;
+        allToReveal.forEach((el, i) => {
+          el.classList.remove("visible");
+          let delay;
+          if (i === 0) delay = base;
+          else delay = base + overlapOffset + (i - 1) * step;
+          setTimeout(() => el.classList.add("visible"), delay);
+        });
+      }
+      // restore play-animate class so page animations can start
+      requestAnimationFrame(() => {
+        setTimeout(() => body.classList.add("play-animate"), 30);
+      });
+
+      // restart blob animations (if CSS provides an animation)
+      const blobs = document.querySelectorAll(".bg-blobs .blob");
+      if (blobs.length) {
+        blobs.forEach((b) => {
+          const computed = getComputedStyle(b).animation || b.style.animation;
+          if (computed && computed !== "none") {
+            b.style.animation = "none";
+            setTimeout(() => {
+              b.style.animation = computed;
+            }, 50);
+          }
+        });
+      }
+    }
+  }
+
+  // Insert a small low-power toggle into the header so users can manually toggle mode
+  try {
+    const headerContainer = document.querySelector(".site-top .container");
+    if (headerContainer) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn ghost small low-power-toggle";
+      btn.setAttribute("aria-pressed", isLowPower ? "true" : "false");
+      btn.title = "Toggle Lite mode (visual effects)";
+      btn.textContent = isLowPower ? "Lite: On" : "Lite: Off";
+      // place it after the nav (end of container)
+      headerContainer.appendChild(btn);
+      btn.addEventListener("click", () => {
+        const currently =
+          document.documentElement.classList.toggle("low-power");
+        btn.setAttribute("aria-pressed", currently ? "true" : "false");
+        btn.textContent = currently ? "Lite: On" : "Lite: Off";
+        try {
+          localStorage.setItem("compressly-low-power", currently ? "1" : "0");
+        } catch (e) {
+          // ignore
+        }
+
+        // Apply mode changes dynamically without reloading the page
+        applyLowPowerMode(currently);
+      });
+    }
+  } catch (e) {
+    // DOM might not be ready for insertion in rare cases — ignore
+  }
+
   // animate progress bars in mock
   document.querySelectorAll(".progress i").forEach((el, idx) => {
     setTimeout(() => {
@@ -79,17 +183,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => document.body.classList.add("play-animate"), 30);
   });
 
-  // Some browsers may not start very long/slow CSS animations for elements offscreen
-  // or when the page was backgrounded. Force-restart the blob animations so they
-  // reliably animate on load by briefly clearing and restoring the animation.
+  // Restart blob animations only on capable devices (restarting can be expensive)
   const blobs = document.querySelectorAll(".bg-blobs .blob");
-  if (blobs.length) {
+  if (
+    !document.documentElement.classList.contains("low-power") &&
+    blobs.length
+  ) {
     blobs.forEach((b) => {
       const computed = getComputedStyle(b).animation || b.style.animation;
       if (computed && computed !== "none") {
-        // briefly disable then restore to force the animation to begin
         b.style.animation = "none";
-        // small timeout so browser treats this as a change
         setTimeout(() => {
           b.style.animation = computed;
         }, 50);
@@ -114,8 +217,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll(".btn, .card").forEach((el) => {
+    // add ripple handler but check low-power mode at runtime so toggling
+    // doesn't require re-attaching/removing listeners or a page reload
     el.addEventListener("click", (e) => {
-      createRipple(e);
+      if (!document.documentElement.classList.contains("low-power")) {
+        createRipple(e);
+      }
     });
     // add subtle hover glow using class (for keyboard focus too)
     el.addEventListener("mouseenter", () => el.classList.add("hovering"));

@@ -42,7 +42,9 @@ body {
 .site-top .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* Use gap + auto margin on .nav so the nav and the lite toggle stay together on the right
+     while the brand remains on the left. This reduces the large space between nav links and the toggle. */
+  gap: 10px;
 }
 .brand {
   font-weight: 800;
@@ -63,12 +65,15 @@ body {
 }
 .nav {
   display: flex;
-  gap: 14px;
+  gap: 8px;
+  /* push nav (and any following siblings like the lite toggle) to the right */
+  margin-left: auto;
 }
 .nav-link {
   color: var(--muted);
   text-decoration: none;
-  padding: 10px;
+  /* slightly reduced padding so links sit tighter next to the Lite toggle */
+  padding: 8px 6px;
   border-radius: 8px;
 }
 .nav-link:hover {
@@ -118,6 +123,14 @@ body {
   position: relative;
   overflow: hidden;
   transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn.small {
+  padding: 6px 8px;
+  font-size: 13px;
+}
+.low-power-toggle {
+  margin-left: 6px;
 }
 
 .os-icon {
@@ -512,6 +525,60 @@ body {
   }
 }
 
+/* Low-power mode: reduce animations, blurs, and heavy shadows for low-end devices */
+.low-power .bg-blobs {
+  display: none !important;
+}
+.low-power .site-top {
+  backdrop-filter: none;
+}
+.low-power .mock-window,
+.low-power .card,
+.low-power .btn {
+  box-shadow: none !important;
+}
+.low-power * {
+  transition: none !important;
+  animation: none !important;
+}
+.low-power .mock-window {
+  transform: none !important;
+}
+.low-power .card {
+  transform: none !important;
+}
+.low-power .ripple {
+  display: none !important;
+}
+.low-power .blob {
+  display: none !important;
+}
+
+/* In low-power mode many elements start hidden and rely on animations/transitions
+   to become visible. Disable that hiding so content is accessible immediately. */
+.low-power .title,
+.low-power .tag,
+.low-power .cta-row,
+.low-power .bullets,
+.low-power .hero-visual,
+.low-power .mock-body,
+.low-power .section-title,
+.low-power .how .step,
+.low-power .download .lead,
+.low-power .download .cta-row,
+.low-power .site-foot,
+.low-power .mock-window,
+.low-power .card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Ensure about page to-reveal elements are visible immediately in low-power mode */
+.low-power .about .to-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Background decorative blobs */
 .bg-blobs {
   position: fixed;
@@ -634,5 +701,19 @@ body {
   }
   100% {
     transform: translateY(6px);
+  }
+}
+
+/* Respect user prefers-reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .bg-blobs {
+    display: none !important;
+  }
+  .ripple {
+    display: none !important;
   }
 }
