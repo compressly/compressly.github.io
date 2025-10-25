@@ -145,6 +145,12 @@ body {
   object-fit: contain;
   display: inline-block;
 }
+.macos-icon {
+  width: 1.12em;
+  height: 1.12em;
+  object-fit: contain;
+  display: inline-block;
+}
 .btn.primary {
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
   color: #fff;
