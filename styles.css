@@ -25,6 +25,12 @@ body {
   background-position: top center;
   color: #e6eef8;
 }
+
+/* Prevent transient horizontal scrollbar caused by media reflow on load */
+html,
+body {
+  overflow-x: hidden;
+}
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -529,6 +535,25 @@ body {
   .nav {
     display: none;
   }
+}
+
+/* Responsive video wrapper and video rules used on download.html */
+.video-wrap {
+  max-width: 960px;
+  margin: 111 auto;
+  padding: 8px 0;
+}
+.responsive-video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(
+    100vh - 220px
+  ); /* reserve space for header/footers - tweak as needed */
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
 }
 
 /* Low-power mode: reduce animations, blurs, and heavy shadows for low-end devices */
