@@ -141,7 +141,7 @@ body {
 
 .os-icon {
   vertical-align: middle;
-  margin-right: 0.5rem;
+  margin-right: 0.35rem; /* reduced so icon + text are tighter */
   fill: currentColor;
   display: inline-block;
 }
@@ -152,8 +152,15 @@ body {
   display: inline-block;
 }
 .macos-icon {
-  width: 1.12em;
-  height: 1.12em;
+  width: 1.25em;
+  height: 1.25em;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+.download-icon {
+  width: 1.3em;
+  height: 1.3em;
   object-fit: contain;
   display: inline-block;
 }
@@ -168,7 +175,7 @@ body {
   color: var(--muted);
 }
 .btn.large {
-  padding: 14px 22px;
+  padding: 14px 16px; /* tighter horizontal padding to bring text closer to edges */
   border-radius: 12px;
 }
 .bullets {
