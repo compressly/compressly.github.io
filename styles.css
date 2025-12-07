@@ -761,6 +761,18 @@ body {
     width: 100%;
     max-width: 320px;
   }
+
+  /* Ensure feature bullet lists remain left-aligned on mobile so text aligns
+     immediately to the right of the bullet markers (prevents centering
+     inherited from .hero-inner on small screens). */
+  .bullets,
+  .bullets ul,
+  .bullets ol {
+    text-align: left;
+    list-style-position: outside;
+    /* use a small, consistent left inset so wrapped lines align under text */
+    padding-inline-start: 20px;
+  }
 }
 
 @keyframes menuOpen {
