@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Theme color for browsers (Safari, Chrome) to tint UI to match header -->
+    <meta name="theme-color" content="#0e0d29" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0d29" />
     <title>Download - Compressly</title>
     <meta name="description" content="The download page for Compressly" />
     <link rel="icon" href="./media/compressly.ico" />
@@ -42,8 +46,8 @@
         <p class="lead about-lead to-reveal">
           I'm so glad you're trying out Compressly. If you're on Windows, before
           you run the installer, please read the short note about Windows
-          Defender false positives. If you're on macOS, please watch a short
-          video on how to allow the app to run.
+          Defender false positives. If you're on macOS, please follow the instructions
+          listed under "macOS Gatekeeper" below.
         </p>
 
         <h2 class="about-sub to-reveal">Download</h2>
@@ -58,7 +62,7 @@
         <p class="to-reveal">
           <a
             class="btn primary large"
-            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.4/Compressly.Setup.1.1.4.exe"
+            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.5/Compressly.Setup.1.1.5.exe"
             target=""
             rel="noopener"
           >
@@ -68,11 +72,11 @@
               alt="Windows"
               aria-hidden="true"
             />
-            Download v1.1.4</a
+            Download v1.1.5</a
           >
           <a
             class="btn primary large"
-            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.4/Compressly.1.1.4.dmg"
+            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.5/Compressly.1.1.5.dmg"
             target=""
             rel="noopener"
           >
@@ -82,7 +86,7 @@
               alt="macOS"
               aria-hidden="true"
             />
-            Download v1.1.4</a
+            Download v1.1.5 </a
           >
           <a
             class="btn ghost large"
@@ -114,21 +118,23 @@
         </ul>
         <h2 class="about-sub to-reveal">macOS Gatekeeper</h2>
         <p class="to-reveal">
-          If you see a "macOS cannot verify the developer" message, please watch
-          this short video on how to allow the app to run:
+          If you see a popup saying "Apple could not verify "Compressly" 
+          is free of malware that may harm your Mac or compromise
+          your privacy", please follow these instructions on how to allow
+          the app to run:
         </p>
-        <div class="to-reveal video-wrap">
-          <video
-            src="./media/mac.mov"
-            controls
-            class="responsive-video"
-          ></video>
-        </div>
+        <ul class="to-reveal">
+          <li>Open System Settings and go to Privacy & Security.</li>
+          <li>In the Security tab, you will see a message saying "Compressly was blocked to protect your Mac."</li>
+          <li>Click "Open Anyway" to allow the app to run. Another popup may appear saying the same thing
+            listed previously. Click "Open Anyway" once again.</li>
+          <li>You might need to enter your administrator password to confirm.</li>
+          <li>NOW you can open the app. Finally.</li>
+        </ul>
         <h2 class="about-sub to-reveal">Questions or concerns</h2>
         <p class="to-reveal">
           If you have any trouble or suspect something is wrong, open an issue
-          on the repository or download a previous release from the releases
-          page:
+          on the repository:
         </p>
         <p class="to-reveal">
           <a

@@ -48,10 +48,21 @@ body {
   padding-inline: clamp(16px, 4vw, 28px);
 }
 .site-top {
+  /* Frosted-glass effect: use both standard and WebKit-prefixed properties
+    so Safari and other WebKit-based browsers render the backdrop blur. */
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  /* darker, slightly translucent header to improve contrast (matches mobile dropdown) */
-  background: rgba(14, 13, 41, 0.9);
+  /* Slightly more translucent so the blur is perceptible across engines. Keep
+    a reasonably dark base color as a fallback for browsers without backdrop-filter. */
+  background: rgba(14, 13, 41, 0.75);
+  background-color: rgba(14, 13, 41, 0.75);
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  /* Hint to browsers that the backdrop/filter and background will change; helps
+    with rendering performance and reduces flicker in some WebKit builds. */
+  will-change: backdrop-filter, -webkit-backdrop-filter, background-color;
+  /* Ensure the translucent background composes correctly on iOS/Safari */
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .site-top {
   position: fixed;
