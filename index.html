@@ -1,272 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Theme color for browsers (Safari, Chrome) to tint UI to match header -->
-    <meta name="theme-color" content="#0e0d29" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0d29" />
-    <title>Compressly - Fast local image & video compression</title>
-    <meta
-      name="description"
-      content="Compressly — a small, local app for compressing images, videos, & audio."
-    />
-    <meta
-      property="og:title"
-      content="Compressly — Fast local image, video & audio compression"
-    />
-    <meta
-      property="og:description"
-      content="Compressly — a small, local app for compressing images, videos, & audio."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compressly | Local media compression that respects your files</title>
+    <meta name="description" content="Compress images, videos, and audio locally with exact target controls or Smart Compression. Compressly 2.0 is private, free, and built for visual fidelity." />
+    <meta property="og:title" content="Compressly 2.0" />
+    <meta property="og:description" content="Smaller media, clear controls, and a new fidelity-focused Smart Compression workflow." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://compressly.github.io" />
-    <meta
-      property="og:image"
-      content="https://compressly.github.io/media/compressly.png"
-    />
-    <link rel="icon" href="./media/compressly.ico" />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta property="og:image" content="https://compressly.github.io/media/compressly.png" />
+    <link rel="icon" href="media/compressly.ico" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- decorative animated background blobs -->
-    <div class="bg-blobs" aria-hidden="true">
-      <span class="blob b1"></span>
-      <span class="blob b2"></span>
-      <span class="blob b3"></span>
-    </div>
+    <div class="bg-blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
     <header class="site-top">
       <div class="container">
-        <a class="brand" href="/" aria-label="Home">
-          <img
-            src="./media/compressly.ico"
-            alt=""
-            aria-hidden="true"
-            class="brand-icon"
-          />
-          Compressly
-        </a>
-        <nav class="nav">
-          <a class="nav-link" href="#features">Features</a>
-          <a class="nav-link" href="#how">How it works</a>
-          <a class="nav-link" href="download.html">Download</a>
+        <a class="brand" href="index.html" aria-label="Compressly home"><img class="brand-icon" src="media/compressly.ico" alt="" /><span>Compressly</span></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" href="#features">What’s new</a>
+          <a class="nav-link" href="smart-compression.html">Smart Compression</a>
           <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link nav-download" href="download.html">Download</a>
         </nav>
+        <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
       </div>
     </header>
 
     <main>
       <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1 class="title">Compressly</h1>
-            <p class="tag">
-              Compress images, videos & audio locally - small file sizes, big
-              quality. No uploads. No tracking. All local.
-              <strong> Completely free, forever</strong>.
-            </p>
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <div class="release-pill"><i></i> Compressly 2.0 is here</div>
+            <h1>Smaller files.<br /><span class="gradient-text">Clearer choices.</span></h1>
+            <p class="hero-lead">Compress images, videos, and audio entirely on your computer. Choose an exact target when size matters, or let Smart Compression preserve the details, motion, and sound that matter most.</p>
             <div class="cta-row">
-              <a
-                class="btn primary large"
-                id="downloadBtn"
-                href="download.html"
-                target=""
-                rel="noopener"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  version="1.1"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 16 16"
-                  class="os-icon download-icon"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.25,13.25 L12.25,13.25 M3.75,6.75 L7.75,10.25 L11.75,6.75 M7.75,1.75 L7.75,10.25"
-                  />
-                </svg>
-
-                Download</a
-              >
-              <a class="btn ghost large" id="learnBtn" href="about.html"
-                >About the project</a
-              >
+              <a class="btn primary large" href="download.html">
+                <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                Download
+              </a>
+              <a class="btn secondary large" href="smart-compression.html">Explore Smart Compression</a>
             </div>
-            <ul class="bullets">
-              <li>Lossy/Lossless image compression (preserve format)</li>
-              <li>Adaptive video bitrate & resolution targeting</li>
-              <li>High quality audio compression</li>
-              <li>Drag & drop, progress UI, deterministic thumbnails</li>
-            </ul>
+            <div class="trust-row"><span>No uploads</span><span>No file limits</span><span>Free and open source</span></div>
           </div>
 
-          <div class="hero-visual">
-            <div class="mock-window">
-              <div class="mock-top">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="mock-title">Compressly</div>
-              </div>
-              <div class="mock-body">
-                <div class="files">
-                  <div class="file">
-                    <div class="thumb thumb-video"></div>
-                    <div class="meta">
-                      <div class="name">epik clip.mov</div>
-                      <div class="progress"><i style="width: 45%"></i></div>
-                    </div>
-                  </div>
-                  <div class="file">
-                    <div class="thumb thumb-img"></div>
-                    <div class="meta">
-                      <div class="name">render.png</div>
-                      <div class="progress"><i style="width: 78%"></i></div>
-                    </div>
-                  </div>
+          <div class="app-preview" data-reveal>
+            <div class="app-window">
+              <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><div class="window-title">Compressly</div></div>
+              <div class="preview-body standard-preview">
+                <div class="standard-preview-head">
+                  <div><div class="preview-heading gradient-text">Compressly</div><div class="standard-preview-subtitle">Compress images, videos &amp; audio without sacrificing too much quality</div></div>
                 </div>
+                <div class="standard-toolbar">
+                  <span class="standard-add">Select Files</span>
+                  <div class="standard-setting"><small>Target size</small><strong><span>5 MB</span><i></i></strong></div>
+                  <div class="standard-setting"><small>FPS</small><strong><span>30</span><i></i></strong></div>
+                  <div class="standard-setting"><small>Target resolution</small><strong><span>720p</span><i></i></strong></div>
+                  <div class="standard-setting"><small>Priority</small><strong><span>Balanced</span><i></i></strong></div>
+                </div>
+                <div class="preview-drop standard-drop"><span>Drag &amp; drop files here, or click “Select Files”</span></div>
+                <div class="preview-file standard-file"><div class="preview-thumb">▶</div><div><strong>epik-clip.mp4</strong><span>148.2 MB · Compressing to 5 MB</span></div><div class="standard-progress"><span></span><small>72%</small></div></div>
+                <div class="standard-preview-foot"><span>Compressing 1 of 1</span><strong>Compress!</strong></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="features" class="features container">
-        <h2 class="section-title">Features</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-emoji">🖼️</div>
-            <h3>Image compression</h3>
-            <p>
-              Preserve original formats, iterative compression with smart
-              quality/resizing to hit target sizes.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-emoji">🎬</div>
-            <h3>Video compression</h3>
-            <p>
-              Adaptive video bitrate calculation, target resolution options, and
-              FPS control to keep files under your limit.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-emoji">🎵</div>
-            <h3>Audio compression</h3>
-            <p>
-              High-quality audio compression with customizable format options.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-emoji">⚡</div>
-            <h3>Snappy UI</h3>
-            <p>
-              Drag & drop, progress bars, cancel/remove, deterministic
-              thumbnails and subtle animations.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="how" class="how container">
-        <h2 class="section-title">How it works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
-            <div class="desc">Pick files or drag & drop into the app.</div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div class="desc">Choose a target size and/or resolution.</div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div class="desc">
-              Compress. Outputs are saved next to originals.
-            </div>
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-heading" data-reveal><div class="kicker">New in version 2.0</div><h2>A bigger release built around <span class="gradient-text">better decisions.</span></h2><p>Compressly now gives you two distinct ways to work, better visibility into every file, and honest results when processing finishes.</p></div>
+          <div class="feature-grid">
+            <article class="feature-card large" data-reveal>
+              <div class="feature-icon">✦</div><h3>Smart Compression</h3><p>A full-window workflow that chooses efficient settings for each file while prioritizing visual fidelity and source motion. Keep resolution, FPS, or audio when those qualities matter.</p><a class="feature-link" href="smart-compression.html">See how Smart Compression works →</a>
+            </article>
+            <article class="feature-card medium" data-reveal>
+              <div class="feature-icon">⌁</div><h3>Size and FPS presets</h3><p>Common targets are now one click away, with custom values still available whenever you need exact control.</p><div class="preset-strip"><span>1 MB</span><span>5 MB</span><span>10 MB</span><span>25 MB</span><span>60 FPS</span><span>Custom</span></div>
+            </article>
+            <article class="feature-card third" data-reveal>
+              <div class="feature-icon">◫</div><h3>Detailed View</h3><p>Open any file to inspect source metadata, settings, live output size, retry attempts, elapsed time, and the final result.</p><div class="detail-mini"><div><span>Source</span><strong>3840 × 2160</strong></div><div><span>Progress</span><strong>Attempt 2 of 3</strong></div></div>
+            </article>
+            <article class="feature-card third" data-reveal>
+              <div class="feature-icon">◎</div><h3>Honest quality analysis</h3><p>Smart video and image results use sampled SSIM comparisons instead of turning an encoder preset into a made-up quality score.</p>
+            </article>
+            <article class="feature-card third" data-reveal>
+              <div class="feature-icon">↘</div><h3>Completion dashboard</h3><p>See total bytes saved, reduction, elapsed time, individual outcomes, and measured visual similarity in one clear summary.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="download" class="download container">
-        <h2 class="section-title">Get Compressly</h2>
-        <p class="lead">
-          Click the button below to redirect you to the download page.
-        </p>
-        <div class="cta-row">
-          <a
-            class="btn primary large"
-            href="download.html"
-            target=""
-            rel="noopener"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 16 16"
-              class="os-icon download-icon"
-              aria-hidden="true"
-            >
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.25,13.25 L12.25,13.25 M3.75,6.75 L7.75,10.25 L11.75,6.75 M7.75,1.75 L7.75,10.25"
-              />
-            </svg>
-            Download</a
-          >
-
-          <a
-            class="btn ghost large"
-            id="viewSourceBtn"
-            href="https://github.com/MinimackStudios/compressly"
-            target="_blank"
-            rel="noopener"
-          >
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              height="1em"
-              width="1em"
-              viewBox="0 0 24 24"
-              style="
-                vertical-align: middle;
-                margin-right: 0.5rem;
-                fill: currentColor;
-              "
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 .297a12 12 0 00-3.793 23.394c.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.338.73-4.042-1.61-4.042-1.61-.546-1.39-1.333-1.76-1.333-1.76-1.09-.75.082-.74.082-.74 1.205.084 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.485.99.108-.77.42-1.3.763-1.6-2.665-.3-5.466-1.33-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 016 0c2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.625-5.475 5.92.432.372.816 1.102.816 2.222 0 1.606-.015 2.9-.015 3.293 0 .32.216.694.825.576A12.005 12.005 0 0012 .297"
-              />
-            </svg>
-            View source on GitHub
-          </a>
+      <section class="section-tight workflows-section">
+        <div class="container">
+          <div class="section-heading center" data-reveal><div class="kicker">Two workflows</div><h2>Choose certainty or let <span class="gradient-text">Compressly decide.</span></h2></div>
+          <div class="mode-split">
+            <article class="mode-card" data-reveal><span class="mode-label">Target Size</span><h3>Fit a known limit</h3><p>Use the standard workflow when an upload, message, or platform has a hard maximum size.</p><ul><li>Exact target-size presets</li><li>Custom FPS and resolution</li><li>Priority controls for video or audio</li><li>Automatic retries when output is oversized</li></ul></article>
+            <article class="mode-card smart" data-reveal><span class="mode-label">Smart Compression</span><h3>Keep it looking right</h3><p>Use Smart mode when your goal is meaningful savings without micromanaging bitrate or inventing a target.</p><ul><li>Fidelity-focused quality profiles</li><li>Resolution and FPS retention</li><li>Per-file media decisions</li><li>Sampled visual comparison after processing</li></ul></article>
+          </div>
         </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="container">
+          <div class="section-heading" data-reveal><div class="kicker">Still simple</div><h2>From media to smaller media in three steps.</h2></div>
+          <div class="steps"><article class="step" data-reveal><h3>Add your files</h3><p>Select or drag in images, videos, and audio. There is no upload and no arbitrary file-size ceiling.</p></article><article class="step" data-reveal><h3>Choose your approach</h3><p>Set an exact target or enter Smart Compression and choose the qualities you want preserved.</p></article><article class="step" data-reveal><h3>Review real results</h3><p>Outputs stay next to your originals. Open Details or the Smart dashboard to understand what changed.</p></article></div>
+        </div>
+      </section>
+
+      <section class="section-tight">
+        <div class="container cta-band" data-reveal><div><h2>Ready to make media lighter?</h2><p>Compressly 2.0 is free, local, and available for Windows, Intel Mac, and Apple Silicon.</p></div><a class="btn primary large" href="download.html">Choose your download</a></div>
       </section>
     </main>
 
-    <footer class="site-foot">
-      <div class="container">
-        <div>© Compressly — Minimack Studios</div>
-        <div class="muted">
-          Built with Electron • Compression done with FFMmpeg and Sharp • Local
-          processing
-        </div>
-      </div>
-    </footer>
-
-    <script src="./script.js"></script>
+    <footer class="site-foot"><div class="container"><div>© <span data-current-year></span> Compressly · Minimack Studios</div><div class="footer-links"><a href="smart-compression.html">Smart Compression</a><a href="download.html">Download</a><a href="https://github.com/MinimackStudios/compressly">GitHub</a></div></div></footer>
+    <script src="script.js"></script>
   </body>
 </html>

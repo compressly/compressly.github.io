@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart Compression | Compressly 2.0</title>
+    <meta name="description" content="Smart Compression makes media meaningfully smaller while retaining the resolution, motion, audio, and visual fidelity that matter." />
+    <meta property="og:title" content="Smart Compression by Compressly" />
+    <meta property="og:description" content="A fidelity-focused compression workflow with honest sampled quality analysis." />
+    <link rel="icon" href="media/compressly.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="smart-page">
+    <div class="bg-blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span><span class="blob b5"></span><span class="blob b6"></span><span class="blob b7"></span></div>
+    <header class="site-top"><div class="container"><a class="brand" href="index.html" aria-label="Compressly home"><img class="brand-icon" src="media/compressly.ico" alt="" /><span>Compressly</span></a><nav class="nav" aria-label="Main navigation"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="index.html#features">What’s new</a><a class="nav-link" aria-current="page" href="smart-compression.html">Smart Compression</a><a class="nav-link" href="about.html">About</a><a class="nav-link nav-download" href="download.html">Download</a></nav><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button></div></header>
+
+    <main>
+      <section class="hero smart-hero">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <div class="eyebrow">Smart Compression</div>
+            <h1>Smaller media without <span class="gradient-text">guessing at quality.</span></h1>
+            <p class="hero-lead">Smart Compression studies each file, chooses a practical encoding strategy, and keeps the qualities you care about. No target-size math and no wall of advanced settings.</p>
+            <div class="cta-row"><a class="btn primary large" href="download.html">Try Smart Compression</a><a class="btn secondary large" href="#how-smart-works">How it decides</a></div>
+            <div class="trust-row"><span>Runs locally</span><span>Works per file</span><span>Measures visual similarity</span></div>
+          </div>
+
+          <div class="app-preview smart-app-preview" data-reveal>
+            <div class="app-window">
+              <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><div class="window-title">Compressly</div></div>
+              <div class="smart-stage">
+                <div class="preview-mode"><div><div class="preview-kicker">Intelligent media optimization</div><div class="preview-heading gradient-text">Smart Compression</div></div><div class="spark">✦</div></div>
+                <div class="smart-drop"><div><i>＋</i><strong>Drop media here</strong><span>Images, videos, and audio can share one batch</span></div></div>
+                <div class="smart-preferences"><div class="smart-pref"><span class="mini-toggle"></span>Retain resolution</div><div class="smart-pref"><span class="mini-toggle"></span>Retain FPS</div><div class="smart-pref"><span class="mini-toggle"></span>Preserve audio</div><div class="smart-pref"><span class="mini-toggle"></span>Strip metadata</div></div>
+                <div class="preview-file"><div class="preview-thumb">▶</div><div><strong>epik-clip.mp4</strong><span>42.6 MB · 71.3% smaller</span></div><div class="preview-score">97.8% similar</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-smart-works" class="section">
+        <div class="container">
+          <div class="section-heading center" data-reveal><div class="kicker">How it works</div><h2>Simple choices, <span class="gradient-text">media-aware decisions.</span></h2><p>Smart Compression does not apply one blunt recipe to every file. Images, video, and audio each receive a strategy suited to their format.</p></div>
+          <div class="principles"><article class="principle" data-reveal><strong>Analyze the source</strong><p>Compressly reads dimensions, frame rate, codecs, duration, audio, and the selected quality profile before encoding.</p></article><article class="principle" data-reveal><strong>Protect your priorities</strong><p>Retention controls keep original resolution, motion cadence, or audio handling when those qualities matter more than maximum savings.</p></article><article class="principle" data-reveal><strong>Explain the outcome</strong><p>The completion dashboard reports actual bytes saved and sampled visual similarity, with technical audio results instead of a fake quality percentage.</p></article></div>
+        </div>
+      </section>
+
+      <section class="section-tight">
+        <div class="container">
+          <div class="mode-split">
+            <article class="mode-card smart" data-reveal><span class="mode-label">Quality profiles</span><h3>Choose the balance, not the bitrate</h3><p>Profiles set the overall intent while keeping the interface approachable.</p><ul><li>Maximum fidelity for near-original presentation</li><li>Balanced for everyday optimization</li><li>Smaller file for stronger practical savings</li></ul></article>
+            <article class="mode-card" data-reveal><span class="mode-label">Retention controls</span><h3>Keep what the source does well</h3><p>Toggle only the attributes you want Compressly to protect.</p><ul><li>Retain original resolution</li><li>Retain original frame rate</li><li>Favor source audio quality</li><li>Remove unnecessary metadata separately</li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container analysis-layout">
+          <div class="quality-visual" data-reveal><div class="quality-number"><strong>97.8%</strong><span>sampled visual similarity</span></div></div>
+          <div data-reveal><div class="kicker">Honest comparison</div><h2>Quality is measured after compression.</h2><p class="hero-lead">For images and videos, Compressly uses FFmpeg’s SSIM filter to compare decoded source and output samples on a normalized canvas. The score describes sampled structural similarity, not subjective perfection.</p><div class="bullet-list"><div class="bullet-item"><i>1</i><div><strong>Bounded sampling</strong><span>Images use one decoded frame. Videos use up to five frames taken across the timeline.</span></div></div><div class="bullet-item"><i>2</i><div><strong>Real before and after</strong><span>The completed output is compared against the actual source, after encoding has finished.</span></div></div><div class="bullet-item"><i>3</i><div><strong>No invented audio score</strong><span>Audio results report whether it was copied or re-encoded, plus codec and bitrate.</span></div></div></div></div>
+        </div>
+      </section>
+
+      <section class="section-tight"><div class="container cta-band" data-reveal><div><h2>Let Compressly do the tuning.</h2><p>Smart Compression is included in Compressly 2.0 for Windows and macOS.</p></div><a class="btn primary large" href="download.html">Download Compressly 2.0</a></div></section>
+    </main>
+
+    <footer class="site-foot"><div class="container"><div>© <span data-current-year></span> Compressly · Minimack Studios</div><div class="footer-links"><a href="index.html">Home</a><a href="download.html">Download</a><a href="https://github.com/MinimackStudios/compressly">GitHub</a></div></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,183 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Theme color for browsers (Safari, Chrome) to tint UI to match header -->
-    <meta name="theme-color" content="#0e0d29" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0d29" />
-    <title>Download - Compressly</title>
-    <meta name="description" content="The download page for Compressly" />
-    <link rel="icon" href="./media/compressly.ico" />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Download Compressly</title>
+    <meta name="description" content="Download Compressly 2.0 for Windows, Apple Silicon Mac, or Intel Mac." />
+    <link rel="icon" href="media/compressly.ico" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="bg-blobs" aria-hidden="true">
-      <span class="blob b1"></span>
-      <span class="blob b2"></span>
-      <span class="blob b3"></span>
-    </div>
-    <header class="site-top">
-      <div class="container">
-        <a class="brand" href="/" aria-label="Home">
-          <img
-            src="./media/compressly.ico"
-            alt=""
-            aria-hidden="true"
-            class="brand-icon"
-          />
-          Compressly
-        </a>
-        <nav class="nav">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/#features">Features</a>
-          <a class="nav-link" href="/#how">How it works</a>
-          <a class="nav-link" href="about.html">About</a>
-        </nav>
-      </div>
-    </header>
+  <body class="download-page">
+    <div class="bg-blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+    <header class="site-top"><div class="container"><a class="brand" href="index.html" aria-label="Compressly home"><img class="brand-icon" src="media/compressly.ico" alt="" /><span>Compressly</span></a><nav class="nav" aria-label="Main navigation"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="index.html#features">What’s new</a><a class="nav-link" href="smart-compression.html">Smart Compression</a><a class="nav-link" href="about.html">About</a><a class="nav-link nav-download" aria-current="page" href="download.html">Download</a></nav><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button></div></header>
 
     <main>
-      <section class="container about">
-        <h1 class="section-title about-title to-reveal">
-          <span class="brand-inline">Thank you!</span>
-        </h1>
-        <p class="lead about-lead to-reveal">
-          I'm so glad you're trying out Compressly. If you're on Windows, before
-          you run the installer, please read the short note about Windows
-          Defender false positives. If you're on macOS, please follow the instructions
-          listed under "macOS Gatekeeper" below.
-        </p>
+      <section class="page-hero container" data-reveal><div class="eyebrow">Download Compressly</div><h1>Choose the build made for <span class="gradient-text">your computer.</span></h1><p>Version 2.0 includes Smart Compression, Detailed View, size and FPS presets, completion dashboards, and everything you need to process media locally.</p></section>
 
-        <h2 class="about-sub to-reveal">Download</h2>
-        <p class="to-reveal">
-          Click the buttons below to download the installer for Windows, or the
-          DMG for macOS.
-          <strong
-            >(Requires Windows 10 or later, macOS 10.13 High Sierra or
-            later)</strong
-          >
-        </p>
-        <p class="to-reveal">
-          <a
-            class="btn primary large"
-            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.5/Compressly.Setup.1.1.5.exe"
-            target=""
-            rel="noopener"
-          >
-            <img
-              class="os-icon windows-icon"
-              src="media/windows.svg"
-              alt="Windows"
-              aria-hidden="true"
-            />
-            Download v1.1.5</a
-          >
-          <a
-            class="btn primary large"
-            href="https://github.com/MinimackStudios/compressly/releases/download/v1.1.5/Compressly.1.1.5.dmg"
-            target=""
-            rel="noopener"
-          >
-            <img
-              class="os-icon macos-icon"
-              src="media/macos.svg"
-              alt="macOS"
-              aria-hidden="true"
-            />
-            Download v1.1.5 </a
-          >
-          <a
-            class="btn ghost large"
-            href="https://github.com/MinimackStudios/compressly/releases/latest"
-            target="_blank"
-            rel="noopener"
-          >
-            Changelog</a
-          >
-        </p>
+      <section class="section-tight">
+        <div class="container">
+          <div class="download-grid">
+            <article class="download-card" data-reveal><span class="download-badge">Windows</span><img class="platform-icon" src="media/windows.svg" alt="" /><h2>Windows</h2><div class="arch">64-bit · Windows 10 or later</div><p>Standard installer for modern Intel and AMD Windows computers.</p><a class="btn primary" data-release-asset="windows" href="https://github.com/MinimackStudios/compressly/releases/latest"><span>Download for Windows<small data-version>Loading version...</small></span></a></article>
 
-        <h2 class="about-sub to-reveal">Windows Defender / SmartScreen</h2>
-        <p class="to-reveal">
-          Some users may see a SmartScreen or Windows Defender warning for new
-          releases of small apps distributed outside major stores. This is a
-          false positive in many cases and can happen for low-distribution apps
-          or unsigned binaries.
-        </p>
-        <ul class="to-reveal">
-          <li>
-            If you see a "Windows protected your PC" message, click "More info"
-            and then "Run anyway".
-          </li>
-          <li>
-            If Defender blocks the download, you can temporarily disable
-            real-time protection or add an exclusion for the downloaded
-            file/folder.
-          </li>
-        </ul>
-        <h2 class="about-sub to-reveal">macOS Gatekeeper</h2>
-        <p class="to-reveal">
-          If you see a popup saying "Apple could not verify "Compressly" 
-          is free of malware that may harm your Mac or compromise
-          your privacy", please follow these instructions on how to allow
-          the app to run:
-        </p>
-        <ul class="to-reveal">
-          <li>Open System Settings and go to Privacy & Security.</li>
-          <li>In the Security tab, you will see a message saying "Compressly was blocked to protect your Mac."</li>
-          <li>Click "Open Anyway" to allow the app to run. Another popup may appear saying the same thing
-            listed previously. Click "Open Anyway" once again.</li>
-          <li>You might need to enter your administrator password to confirm.</li>
-          <li>NOW you can open the app. Finally.</li>
-        </ul>
-        <h2 class="about-sub to-reveal">Questions or concerns</h2>
-        <p class="to-reveal">
-          If you have any trouble or suspect something is wrong, open an issue
-          on the repository:
-        </p>
-        <p class="to-reveal">
-          <a
-            class="btn ghost large"
-            id="viewSourceBtn"
-            href="https://github.com/MinimackStudios/compressly"
-            target="_blank"
-            rel="noopener"
-          >
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              height="1em"
-              width="1em"
-              viewBox="0 0 24 24"
-              style="
-                vertical-align: middle;
-                margin-right: 0.5rem;
-                fill: currentColor;
-              "
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 .297a12 12 0 00-3.793 23.394c.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.338.73-4.042-1.61-4.042-1.61-.546-1.39-1.333-1.76-1.333-1.76-1.09-.75.082-.74.082-.74 1.205.084 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.485.99.108-.77.42-1.3.763-1.6-2.665-.3-5.466-1.33-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 016 0c2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.625-5.475 5.92.432.372.816 1.102.816 2.222 0 1.606-.015 2.9-.015 3.293 0 .32.216.694.825.576A12.005 12.005 0 0012 .297"
-              />
-            </svg>
-            View source on GitHub</a
-          >
-        </p>
+            <article class="download-card recommended" data-reveal><span class="download-badge">Recommended for new Macs</span><img class="platform-icon" src="media/macos.svg" alt="" /><h2>Mac</h2><div class="arch">Apple Silicon · M1, M2, M3, M4 and newer</div><p>Native ARM64 build for Apple Silicon with matching bundled media tools.</p><a class="btn primary" data-release-asset="mac-arm64" href="https://github.com/MinimackStudios/compressly/releases/latest"><span>Download for Apple Silicon<small data-version>Loading version...</small></span></a></article>
 
-        <p class="to-reveal">
-          <a class="btn primary" href="index.html">Back to home</a>
-        </p>
+            <article class="download-card" data-reveal><span class="download-badge">Intel Macs</span><img class="platform-icon" src="media/macos.svg" alt="" /><h2>Mac</h2><div class="arch">Intel · x64</div><p>Intel-compatible build for Macs that do not use an Apple M-series processor.</p><a class="btn primary" data-release-asset="mac-x64" href="https://github.com/MinimackStudios/compressly/releases/latest"><span>Download for Intel Mac<small data-version>Loading version...</small></span></a></article>
+          </div>
+          <div class="requirements"><span>Windows 10 or later</span><span>macOS 12 Monterey or later</span><span>All processing stays local</span></div>
+        </div>
       </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading" data-reveal><div class="kicker">Before opening Compressly</div><h2>A quick note about operating system warnings.</h2><p>Compressly is distributed directly through GitHub. Small, independently distributed apps can trigger reputation-based warnings even when the files are legitimate.</p></div>
+          <div class="notice-grid">
+            <article class="notice" data-reveal><h3>Windows SmartScreen</h3><p>If Windows shows “Windows protected your PC,” choose <strong>More info</strong>, confirm the publisher information shown by your download, then choose <strong>Run anyway</strong> if you trust the file.</p><p>Never disable real-time protection globally just to install an application.</p></article>
+            <article class="notice" data-reveal>
+              <h3>macOS Gatekeeper</h3>
+              <p>If you see a message saying Apple could not verify that Compressly is free of malware, follow these steps to allow the app to run:</p>
+              <ol class="gatekeeper-steps">
+                <li>Open <strong>System Settings</strong> and go to <strong>Privacy &amp; Security</strong>.</li>
+                <li>In the Security section, find the message saying that Compressly was blocked to protect your Mac.</li>
+                <li>Click <strong>Open Anyway</strong>. If another warning appears, click <strong>Open Anyway</strong> again.</li>
+                <li>Enter your administrator password if macOS asks you to confirm.</li>
+                <li>Open Compressly again.</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tight"><div class="container cta-band" data-reveal><div><h2>Need a previous version?</h2><p>Every published build and its release notes remain available on GitHub.</p></div><a class="btn secondary large" href="https://github.com/MinimackStudios/compressly/releases" target="_blank" rel="noopener">View all releases</a></div></section>
     </main>
 
-    <footer class="site-foot">
-      <div class="container">
-        <div>© Compressly — Minimack Studios</div>
-        <div class="muted">Built with FFmpeg & Sharp • Local processing</div>
-      </div>
-    </footer>
-
-    <script src="./script.js"></script>
+    <footer class="site-foot"><div class="container"><div>© <span data-current-year></span> Compressly · Minimack Studios</div><div class="footer-links"><a href="smart-compression.html">Smart Compression</a><a href="about.html">About</a><a href="https://github.com/MinimackStudios/compressly">GitHub</a></div></div></footer>
+    <script src="script.js"></script>
   </body>
 </html>
